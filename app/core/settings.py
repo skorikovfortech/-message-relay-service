@@ -1,0 +1,21 @@
+from dotenv import load_dotenv
+import logging
+import os
+
+load_dotenv()
+
+db_protocol = os.getenv("DB_PROTOCOL")
+postgres_user = os.getenv("POSTGRES_USER")
+postgres_password = os.getenv("POSTGRES_PASSWORD")
+db_host = os.getenv("DB_HOST")
+db_port = os.getenv("DB_PORT")
+db_name = os.getenv("DB_NAME")
+
+async_url = (
+    f"{db_protocol}://{postgres_user}:{postgres_password}@{db_host}:{db_port}/{db_name}"
+)
+
+
+sync_url = (
+    f"postgresql://{postgres_user}:{postgres_password}@{db_host}:{db_port}/{db_name}"
+)
