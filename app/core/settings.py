@@ -19,3 +19,5 @@ async_url = (
 sync_url = (
     f"postgresql://{postgres_user}:{postgres_password}@{db_host}:{db_port}/{db_name}"
 )
+
+bot_token = os.getenv("TG_TOKEN")
